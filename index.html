@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VIRTUALFINITY – Centre de Laser Game en Réalité Virtuelle à Cortaillod, Suisse. Vivez une expérience immersive unique avec les casques Meta Quest 3S.">
+  <title>VIRTUALFINITY – Laser Game en Réalité Virtuelle</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+</head>
+<body>
+
+<div class="grid-bg" aria-hidden="true"></div>
+
+<!-- NAV -->
+<nav id="navbar" role="navigation" aria-label="Navigation principale">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo" aria-label="VIRTUALFINITY – Accueil">
+      <span class="logo-icon" aria-hidden="true">🎯</span>
+      <span><span class="logo-v">VIRTUAL</span><span class="logo-rest">FINITY</span></span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="concept.html">Concept</a></li>
+      <li><a href="salles.html">Nos Salles</a></li>
+      <li><a href="tarifs.html">Tarifs</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="reservation.html" class="nav-cta">Réserver</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" aria-label="Accueil">
+  <canvas id="hero-canvas" aria-hidden="true"></canvas>
+  <div class="hero-glow-orb orb-1" aria-hidden="true"></div>
+  <div class="hero-glow-orb orb-2" aria-hidden="true"></div>
+  <div class="container z1">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="dot" aria-hidden="true"></span>
+        Ouvert à Cortaillod, Neuchâtel · Suisse
+      </div>
+      <h1 class="hero-title">VIRTUAL<span class="line-2">FINITY</span></h1>
+      <p class="hero-subtitle">"Plongez dans une expérience immersive unique !"</p>
+      <p class="hero-desc">
+        Le premier centre de Laser Game en Réalité Virtuelle de la région.
+        Combattez en équipe dans des univers saisissants grâce aux casques
+        <strong style="color:var(--white)">Meta Quest 3S</strong>.
+        Pour tous les âges · Idéal anniversaires &amp; team building.
+      </p>
+      <div class="hero-ctas">
+        <a href="reservation.html" class="btn btn-primary btn-lg">
+          <span aria-hidden="true">🎯</span> Réserver maintenant
+        </a>
+        <a href="concept.html" class="btn btn-outline btn-lg">
+          <span aria-hidden="true">▶</span> Découvrir le concept
+        </a>
+      </div>
+      <div class="hero-stats" role="list">
+        <div class="hero-stat-item" role="listitem">
+          <span class="stat-num">3</span>
+          <span class="stat-label">Univers de jeu</span>
+        </div>
+        <div class="hero-stat-item" role="listitem">
+          <span class="stat-num"><span style="color:var(--cyan)">Meta</span><br>Quest 3S</span>
+          <span class="stat-label">Technologie</span>
+        </div>
+        <div class="hero-stat-item" role="listitem">
+          <span class="stat-num"><span style="color:var(--cyan)">100%</span></span>
+          <span class="stat-label">Météo-indépendant</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POURQUOI VIRTUALFINITY -->
+<section class="py-section" aria-label="Nos atouts">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Pourquoi VIRTUALFINITY ?</span>
+      <h2>Une expérience <span class="gradient-text">hors du commun</span></h2>
+      <p>Nous combinons la technologie VR de pointe avec le frisson du laser game pour créer une activité unique, accessible et inoubliable.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal reveal-delay-1">
+        <div class="feature-icon" aria-hidden="true">🌦️</div>
+        <h3>Indépendant de la météo</h3>
+        <p>Pluie, neige ou soleil — votre aventure se joue toujours dans les meilleures conditions.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-2">
+        <div class="feature-icon cyan" aria-hidden="true">🥽</div>
+        <h3>Immersion totale</h3>
+        <p>Les casques Meta Quest 3S offrent un tracking précis et une immersion absolue dans chaque univers.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-3">
+        <div class="feature-icon magenta" aria-hidden="true">🎂</div>
+        <h3>Idéal pour anniversaires</h3>
+        <p>Package anniversaire clé en main. Une fête inoubliable pour les enfants comme les adultes.</p>
+      </div>
+      <div class="feature-card reveal reveal-delay-4">
+        <div class="feature-icon" aria-hidden="true">🏢</div>
+        <h3>Team Building premium</h3>
+        <p>Renforcez la cohésion de votre équipe avec nos formules entreprise. Privatisation possible dès 5 personnes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APERÇU SALLES -->
+<section class="py-section" style="background: linear-gradient(180deg, transparent, rgba(123,0,255,0.03), transparent);" aria-label="Nos salles">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Nos Univers</span>
+      <h2>3 salles, 3 <span class="gradient-text">aventures</span></h2>
+      <p>De l'univers enfantin au champ de bataille tactique, chaque salle est pensée pour un niveau d'intensité différent.</p>
+    </div>
+    <div class="salles-grid">
+      <article class="salle-card reveal reveal-delay-1">
+        <div class="salle-img salle-img-cartoon">
+          <span class="salle-img-icon" role="img" aria-label="Dessin animé">🌈</span>
+          <div class="salle-img-overlay" aria-hidden="true"></div>
+          <span class="salle-age-badge badge-green">8 – 11 ans</span>
+        </div>
+        <div class="salle-body">
+          <h3>Dessin Animé</h3>
+          <p class="salle-tagline">✨ L'aventure colorée &amp; sécurisée</p>
+          <p>Un monde cartoon plein de couleurs, conçu pour les plus jeunes. Sécurité maximale et fun garanti.</p>
+          <a href="salles.html#cartoon" class="btn btn-outline btn-sm">Découvrir</a>
+        </div>
+      </article>
+      <article class="salle-card reveal reveal-delay-2">
+        <div class="salle-img salle-img-immeuble">
+          <span class="salle-img-icon" role="img" aria-label="Immeuble abandonné">🏚️</span>
+          <div class="salle-img-overlay" aria-hidden="true"></div>
+          <span class="salle-age-badge badge-blue">11 – 40 ans</span>
+        </div>
+        <div class="salle-body">
+          <h3>Immeuble Abandonné</h3>
+          <p class="salle-tagline">🌑 L'immersion urbaine saisissante</p>
+          <p>Atmosphère intense, couloirs obscurs. Survie, stratégie et coordination sont la clé.</p>
+          <a href="salles.html#immeuble" class="btn btn-outline btn-sm">Découvrir</a>
+        </div>
+      </article>
+      <article class="salle-card reveal reveal-delay-3">
+        <div class="salle-img salle-img-guerre">
+          <span class="salle-img-icon" role="img" aria-label="Guerre">⚔️</span>
+          <div class="salle-img-overlay" aria-hidden="true"></div>
+          <span class="salle-age-badge badge-red">16 – 40 ans</span>
+        </div>
+        <div class="salle-body">
+          <h3>Guerre</h3>
+          <p class="salle-tagline">💥 Le combat tactique ultime</p>
+          <p>Simulations militaires réalistes. Teamwork, précision et instinct de survie.</p>
+          <a href="salles.html#guerre" class="btn btn-outline btn-sm">Découvrir</a>
+        </div>
+      </article>
+    </div>
+    <div class="text-center mt-8">
+      <a href="salles.html" class="btn btn-outline">Voir toutes nos salles →</a>
+    </div>
+  </div>
+</section>
+
+<!-- TARIFS APERÇU -->
+<section class="py-section" style="background: linear-gradient(180deg, transparent, rgba(0,229,255,0.02), transparent);" aria-label="Tarifs">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Nos offres</span>
+      <h2>Des tarifs <span class="gradient-text">pour tous</span></h2>
+      <p>Formules claires, sans surprises.</p>
+    </div>
+    <div class="tarifs-grid">
+      <div class="tarif-card reveal reveal-delay-1">
+        <div class="tarif-icon" aria-hidden="true">⚡</div>
+        <h3>Session Standard</h3>
+        <p class="tarif-sub">15 minutes d'immersion pure</p>
+        <div class="tarif-price-row">
+          <span class="currency">CHF</span>
+          <span class="amount">23</span>
+          <span class="unit">/ adulte</span>
+        </div>
+        <p class="tarif-price-child">Enfant : <span>CHF 16</span></p>
+        <a href="reservation.html" class="btn btn-outline" style="width:100%;justify-content:center;">Réserver</a>
+      </div>
+      <div class="tarif-card featured reveal reveal-delay-2">
+        <div class="tarif-icon" aria-hidden="true">🎂</div>
+        <h3>Anniversaire</h3>
+        <p class="tarif-sub">Min. 8 enfants · Organisation incluse</p>
+        <div class="tarif-price-row">
+          <span class="currency">CHF</span>
+          <span class="amount">13</span>
+          <span class="unit">/ enfant</span>
+        </div>
+        <p class="tarif-price-child">+ CHF 100 organisation</p>
+        <a href="reservation.html" class="btn btn-cyan" style="width:100%;justify-content:center;">Réserver</a>
+      </div>
+      <div class="tarif-card reveal reveal-delay-3">
+        <div class="tarif-icon" aria-hidden="true">🏢</div>
+        <h3>Entreprise</h3>
+        <p class="tarif-sub">Team building · Privatisation</p>
+        <div class="tarif-price-row">
+          <span class="currency">CHF</span>
+          <span class="amount">20</span>
+          <span class="unit">/ pers.</span>
+        </div>
+        <p class="tarif-price-child">+ CHF 100 privatisation</p>
+        <a href="contact.html" class="btn btn-outline" style="width:100%;justify-content:center;">Nous contacter</a>
+      </div>
+    </div>
+    <div class="text-center mt-8">
+      <a href="tarifs.html" class="btn btn-outline">Voir tous les tarifs →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" aria-label="Appel à l'action">
+  <div class="container z1">
+    <span class="section-label reveal">Prêt à jouer ?</span>
+    <h2 class="reveal reveal-delay-1">Rejoignez l'aventure <span class="gradient-text">dès aujourd'hui !</span></h2>
+    <p class="reveal reveal-delay-2">Réservez votre session en ligne en 2 minutes. Disponible 7j/7, de 10h à 22h.</p>
+    <div class="cta-btns reveal reveal-delay-3">
+      <a href="reservation.html" class="btn btn-primary btn-lg">🎯 Réserver maintenant</a>
+      <a href="contact.html" class="btn btn-outline btn-lg">📞 Nous contacter</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">
+          <span class="logo-icon" aria-hidden="true">🎯</span>
+          <span><span class="logo-v">VIRTUAL</span><span class="logo-rest">FINITY</span></span>
+        </a>
+        <p>Le centre de Laser Game en Réalité Virtuelle de référence en Suisse romande.</p>
+        <div class="footer-social" role="list" aria-label="Réseaux sociaux">
+          <a href="https://instagram.com/virtualfinity" class="social-btn" aria-label="Instagram" target="_blank" rel="noopener">📷</a>
+          <a href="https://tiktok.com/@virtualfinity" class="social-btn" aria-label="TikTok" target="_blank" rel="noopener">🎵</a>
+          <a href="https://facebook.com/virtualfinity" class="social-btn" aria-label="Facebook" target="_blank" rel="noopener">👥</a>
+        </div>
+      </div>
+      <nav class="footer-col" aria-label="Navigation secondaire">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="concept.html">Notre concept</a></li>
+          <li><a href="salles.html">Nos salles</a></li>
+          <li><a href="tarifs.html">Tarifs</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="footer-col">
+        <h4>Réserver</h4>
+        <ul>
+          <li><a href="reservation.html">Réservation en ligne</a></li>
+          <li><a href="tarifs.html#anniversaire">Formule anniversaire</a></li>
+          <li><a href="tarifs.html#entreprise">Formule entreprise</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Adresse</h4>
+        <address>
+          Route de Boudry 16<br>
+          2016 Cortaillod<br>
+          Suisse<br><br>
+          📞 <a href="tel:+41000000000">+41 00 000 00 00</a><br>
+          ✉️ <a href="mailto:info@virtualfinity.ch">info@virtualfinity.ch</a><br><br>
+          Lun–Ven : 14h – 22h<br>
+          Sam–Dim : 10h – 22h
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025–2026 VIRTUALFINITY. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="./js/main.js"></script>
+</body>
+</html>

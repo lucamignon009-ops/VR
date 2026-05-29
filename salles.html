@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Découvrez les 3 salles de VIRTUALFINITY : Dessin Animé (8-11 ans), Immeuble Abandonné (11-40 ans), Guerre (16-40 ans). Laser Game VR à Cortaillod.">
+  <title>Nos Salles – VIRTUALFINITY</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
+  <style>
+    .salle-detail {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      padding: 100px 0;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .salle-detail:last-child { border-bottom: none; }
+    .salle-detail.reverse .salle-detail-visual { order: 2; }
+    .salle-detail.reverse .salle-detail-content { order: 1; }
+    .salle-visual-box {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      position: relative;
+    }
+    .salle-visual-inner {
+      height: 380px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .salle-vis-cartoon  { background: radial-gradient(ellipse at center, #1a0a3e 0%, #0a1a2e 40%, #06060e 100%); }
+    .salle-vis-immeuble { background: radial-gradient(ellipse at center, #0d0d1a 0%, #1a1a2e 40%, #06060e 100%); }
+    .salle-vis-guerre   { background: radial-gradient(ellipse at center, #1a0a0a 0%, #2e1000 40%, #06060e 100%); }
+    .salle-big-icon { font-size: 8rem; filter: drop-shadow(0 0 40px rgba(123,0,255,0.5)); }
+    .salle-vis-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(123,0,255,0.1), rgba(0,229,255,0.05));
+    }
+    .salle-specs {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 24px 0;
+    }
+    .spec-item {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 14px 16px;
+    }
+    .spec-label { font-family: var(--font-display); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--grey); margin-bottom: 4px; display: block; }
+    .spec-value { font-size: 0.97rem; color: var(--white); font-weight: 600; }
+    @media (max-width: 768px) {
+      .salle-detail { grid-template-columns: 1fr; gap: 32px; }
+      .salle-detail.reverse .salle-detail-visual { order: 0; }
+      .salle-detail.reverse .salle-detail-content { order: 1; }
+    }
+  </style>
+</head>
+<body>
+<div class="grid-bg" aria-hidden="true"></div>
+
+<!-- NAV -->
+<nav id="navbar" role="navigation" aria-label="Navigation principale">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-icon" aria-hidden="true">🎯</span>
+      <span><span class="logo-v">VIRTUAL</span><span class="logo-rest">FINITY</span></span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="concept.html">Concept</a></li>
+      <li><a href="salles.html">Nos Salles</a></li>
+      <li><a href="tarifs.html">Tarifs</a></li>
+      
+      
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="reservation.html" class="nav-cta">Réserver</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<header class="page-hero">
+  <div class="page-hero-bg" aria-hidden="true"></div>
+  <div class="container">
+    <span class="section-label">Choisissez votre aventure</span>
+    <h1 class="mt-4">Nos <span class="gradient-text">Salles</span></h1>
+    <p style="max-width:580px;margin:16px auto 0;font-size:1.1rem;">
+      3 univers uniques, 3 niveaux d'intensité, un seul objectif : vous offrir l'expérience VR la plus immersive qui soit.
+    </p>
+    <div style="display:flex;gap:16px;justify-content:center;margin-top:32px;flex-wrap:wrap;">
+      <a href="#cartoon"  class="btn btn-outline btn-sm">🌈 Dessin Animé</a>
+      <a href="#immeuble" class="btn btn-outline btn-sm">🏚️ Immeuble Abandonné</a>
+      <a href="#guerre"   class="btn btn-outline btn-sm">⚔️ Guerre</a>
+    </div>
+  </div>
+</header>
+
+<!-- SALLES DÉTAILLÉES -->
+<main class="container">
+
+  <!-- SALLE 1 : DESSIN ANIMÉ -->
+  <article class="salle-detail" id="cartoon" aria-labelledby="cartoon-title">
+    <div class="salle-detail-visual reveal">
+      <div class="salle-visual-box">
+        <div class="salle-visual-inner salle-vis-cartoon">
+          <span class="salle-vis-overlay" aria-hidden="true"></span>
+          <span class="salle-big-icon" role="img" aria-label="Monde coloré">🌈</span>
+        </div>
+        <div style="padding:24px;background:var(--card-bg);border-top:1px solid var(--card-border);">
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <span class="tag tag-cyan">Intensité : Légère</span>
+            <span class="salle-age-badge badge-green" style="position:static;display:inline-block;">8 – 11 ans</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="salle-detail-content reveal reveal-delay-2">
+      <span class="section-label">Salle 1</span>
+      <h2 id="cartoon-title" style="margin:12px 0 8px;">Dessin <span class="gradient-text">Animé</span></h2>
+      <p style="color:var(--cyan);font-size:1rem;font-weight:600;margin-bottom:20px;">✨ L'aventure colorée et sécurisée pour les plus jeunes</p>
+      <p>
+        Entrez dans un monde cartoon explosif de couleurs et de joie ! La salle Dessin Animé est spécialement conçue pour accueillir les enfants dès 8 ans dans un environnement à la fois sécurisé et extrêmement fun. Personnages attachants, décors vibrants, gameplay simplifié : tout est pensé pour que vos enfants vivent leur première expérience VR de manière positive et inoubliable.
+      </p>
+      <p style="margin-top:12px;">
+        L'intensité visuelle et sonore est calibrée pour les plus jeunes, avec des mécaniques de jeu intuitives qui ne nécessitent aucune expérience préalable. Idéale pour les anniversaires, cette salle est un succès garanti auprès des enfants comme des parents.
+      </p>
+
+      <div class="salle-specs">
+        <div class="spec-item">
+          <span class="spec-label">Public cible</span>
+          <span class="spec-value">8 – 11 ans</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Durée session</span>
+          <span class="spec-value">15 minutes</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Capacité max</span>
+          <span class="spec-value">6 joueurs</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Intensité</span>
+          <span class="spec-value">⭐ Légère</span>
+        </div>
+      </div>
+
+      <div style="margin-bottom:24px;">
+        <h4 style="margin-bottom:12px;color:var(--cyan);">Pourquoi choisir cette salle ?</h4>
+        <ul style="display:flex;flex-direction:column;gap:8px;">
+          <li style="display:flex;gap:10px;font-size:0.95rem;color:var(--grey-light);">
+            <span style="color:var(--cyan);">✓</span> Parfaitement adaptée aux enfants dès 8 ans
+          </li>
+          <li style="display:flex;gap:10px;font-size:0.95rem;color:var(--grey-light);">
+            <span style="color:var(--cyan);">✓</span> Mécaniques simples, apprentissage immédiat
+          </li>
+          <li style="display:flex;gap:10px;font-size:0.95rem;color:var(--grey-light);">
+            <span style="color:var(--cyan);">✓</span> Stimulation créative et coopération
+          </li>
+          <li style="display:flex;gap:10px;font-size:0.95rem;color:var(--grey-light);">
+            <span style="color:var(--cyan);">✓</span> Idéale pour les fêtes d'anniversaire
+          </li>
+        </ul>
+      </div>
+
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="reservation.html?salle=cartoon" class="btn btn-primary">🎯 Réserver cette salle</a>
+        <a href="tarifs.html" class="btn btn-outline">Voir les tarifs</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- SALLE 2 : IMMEUBLE ABANDONNÉ -->
+  <article class="salle-detail reverse" id="immeuble" aria-labelledby="immeuble-title">
+    <div class="salle-detail-content reveal">
+      <span class="section-label">Salle 2</span>
+      <h2 id="immeuble-title" style="margin:12px 0 8px;">Immeuble <span class="gradient-text">Abandonné</span></h2>
+      <p style="color:var(--cyan);font-size:1rem;font-weight:600;margin-bottom:20px;">🌑 L'immersion urbaine intense et saisissante</p>
+      <p>
+        Les murs s'effritent. Les couloirs sont plongés dans la pénombre. Des bruits étranges résonnent à chaque tournant. Bienvenue dans l'Immeuble Abandonné — une expérience VR d'une intensité rare où la survie dépend de votre sens tactique et de votre capacité à communiquer avec votre équipe.
+      </p>
+      <p style="margin-top:12px;">
+        Chaque session plonge les joueurs dans une atmosphère post-apocalyptique oppressante, avec des effets sonores spatiaux 3D qui créent une tension palpable. La coopération est la clé : isolé, vous êtes vulnérable. Ensemble, vous êtes imbattables.
+      </p>
+
+      <div class="salle-specs">
+        <div class="spec-item">
+          <span class="spec-label">Public cible</span>
+          <span class="spec-value">11 – 40 ans</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Durée session</span>
+          <span class="spec-value">15 minutes</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Capacité max</span>
+          <span class="spec-value">6 joueurs</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Intensité</span>
+          <span class="spec-value">⭐⭐⭐ Élevée</span>
+        </div>
+      </div>
+
+      <div style="margin-bottom:24px;">
+        <h4 style="margin-bottom:12px;color:var(--cyan);">Pourquoi choisir cette salle ?</h4>
+        <ul style="display:flex;flex-direction:column;gap:8px;">
+          <li style="display:flex;gap:10px;font-size:0.95rem;color:var(--grey-light);">
+            <span style="color:var(--cyan);">✓</span> Atmosphère unique et immersive sans équivalent
+          </li>
+          <li style="display:flex;gap:10px;font-size:0.95rem;color:var(--grey-light);">
+            <span style="color:var(--cyan);">✓</span> Développe la communication d'équipe
+          </li>
+          <li style="display:flex;gap:10px;font-size:0.95rem;color:var(--grey-light);">
+            <span style="color:var(--cyan);">✓</span> Adrénaline garantie dès les premières secondes
+          </li>
+          <li style="display:flex;gap:10px;font-size:0.95rem;color:var(--grey-light);">
+            <span style="color:var(--cyan);">✓</span> Idéale pour groupes d'ados et adultes
+          </li>
+        </ul>
+      </div>
+
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="reservation.html?salle=immeuble" class="btn btn-primary">🎯 Réserver cette salle</a>
+        <a href="tarifs.html" class="btn btn-outline">Voir les tarifs</a>
+      </div>
+    </div>
+    <div class="salle-detail-visual reveal reveal-delay-2">
+      <div class="salle-visual-box">
+        <div class="salle-visual-inner salle-vis-immeuble">
+          <span class="salle-vis-overlay" aria-hidden="true"></span>
+          <span class="salle-big-icon" role="img" aria-label="Immeuble abandonné">🏚️</span>
+        </div>
+        <div style="padding:24px;background:var(--card-bg);border-top:1px solid var(--card-border);">
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <span class="tag tag-violet">Intensité : Élevée</span>
+            <span class="salle-age-badge badge-blue" style="position:static;display:inline-block;">11 – 40 ans</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- SALLE 3 : GUERRE -->
+  <article class="salle-detail" id="guerre" aria-labelledby="guerre-title">
+    <div class="salle-detail-visual reveal">
+      <div class="salle-visual-box">
+        <div class="salle-visual-inner salle-vis-guerre">
+          <span class="salle-vis-overlay" aria-hidden="true"></span>
+          <span class="salle-big-icon" role="img" aria-label="Combat tactique">⚔️</span>
+        </div>
+        <div style="padding:24px;background:var(--card-bg);border-top:1px solid var(--card-border);">
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <span class="tag" style="background:rgba(248,113,113,0.1);border:1px solid rgba(248,113,113,0.3);color:#f87171;">Intensité : Maximale</span>
+            <span class="salle-age-badge badge-red" style="position:static;display:inline-block;">16 – 40 ans</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="salle-detail-content reveal reveal-delay-2">
+      <span class="section-label">Salle 3</span>
+      <h2 id="guerre-title" style="margin:12px 0 8px;"><span class="gradient-text">Guerre</span></h2>
+      <p style="color:var(--magenta);font-size:1rem;font-weight:600;margin-bottom:20px;">💥 Le combat tactique ultime pour les guerriers</p>
+      <p>
+        Des tranchées boueuses aux ruines d'une ville dévastée — la salle Guerre plonge les joueurs dans des simulations de combat militaire d'un réalisme stupéfiant. Chaque décision compte, chaque mouvement peut être décisif. Cette salle est réservée aux joueurs dès 16 ans, cherchant une expérience compétitive et tactique de haut niveau.
+      </p>
+      <p style="margin-top:12px;">
+        Travail d'équipe, stratégie de flanc, suppression et avancée : les concepts tactiques réels sont au cœur du gameplay. Une expérience qui laisse sans voix et donne envie de revenir encore et encore.
+      </p>
+
+      <div class="salle-specs">
+        <div class="spec-item">
+          <span class="spec-label">Public cible</span>
+          <span class="spec-value">16 – 40 ans</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Durée session</span>
+          <span class="spec-value">15 minutes</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Capacité max</span>
+          <span class="spec-value">6 joueurs</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Intensité</span>
+          <span class="spec-value">⭐⭐⭐⭐⭐ Max</span>
+        </div>
+      </div>
+
+      <div style="margin-bottom:24px;">
+        <h4 style="margin-bottom:12px;color:var(--magenta);">Pourquoi choisir cette salle ?</h4>
+        <ul style="display:flex;flex-direction:column;gap:8px;">
+          <li style="display:flex;gap:10px;font-size:0.95rem;color:var(--grey-light);">
+            <span style="color:var(--magenta);">✓</span> L'expérience la plus intense et réaliste de notre centre
+          </li>
+          <li style="display:flex;gap:10px;font-size:0.95rem;color:var(--grey-light);">
+            <span style="color:var(--magenta);">✓</span> Parfaite pour le team building entreprise
+          </li>
+          <li style="display:flex;gap:10px;font-size:0.95rem;color:var(--grey-light);">
+            <span style="color:var(--magenta);">✓</span> Environnements militaires photoréalistes
+          </li>
+          <li style="display:flex;gap:10px;font-size:0.95rem;color:var(--grey-light);">
+            <span style="color:var(--magenta);">✓</span> Compétitions inter-équipes possibles
+          </li>
+        </ul>
+      </div>
+
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="reservation.html?salle=guerre" class="btn btn-magenta">🎯 Réserver cette salle</a>
+        <a href="tarifs.html" class="btn btn-outline">Voir les tarifs</a>
+      </div>
+    </div>
+  </article>
+
+</main>
+
+<!-- TABLEAU COMPARATIF -->
+<section class="py-section" style="background: linear-gradient(180deg, transparent, rgba(0,229,255,0.02), transparent);">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Comparatif</span>
+      <h2>Choisissez votre <span class="gradient-text">univers</span></h2>
+    </div>
+    <div style="overflow-x:auto;">
+      <table style="width:100%;border-collapse:collapse;border-radius:var(--radius-lg);overflow:hidden;" class="reveal">
+        <thead>
+          <tr style="background:rgba(123,0,255,0.1);">
+            <th style="padding:20px 24px;text-align:left;font-family:var(--font-display);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--grey);border-bottom:1px solid var(--card-border);">Critère</th>
+            <th style="padding:20px 24px;text-align:center;font-family:var(--font-display);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:#4ade80;border-bottom:1px solid var(--card-border);">🌈 Dessin Animé</th>
+            <th style="padding:20px 24px;text-align:center;font-family:var(--font-display);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--cyan);border-bottom:1px solid var(--card-border);">🏚️ Immeuble</th>
+            <th style="padding:20px 24px;text-align:center;font-family:var(--font-display);font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:#f87171;border-bottom:1px solid var(--card-border);">⚔️ Guerre</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--card-border);">
+            <td style="padding:16px 24px;color:var(--grey);font-size:0.95rem;">Âge recommandé</td>
+            <td style="padding:16px 24px;text-align:center;color:var(--white);font-weight:600;">8 – 11 ans</td>
+            <td style="padding:16px 24px;text-align:center;color:var(--white);font-weight:600;">11 – 40 ans</td>
+            <td style="padding:16px 24px;text-align:center;color:var(--white);font-weight:600;">16 – 40 ans</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--card-border);background:rgba(255,255,255,0.01);">
+            <td style="padding:16px 24px;color:var(--grey);font-size:0.95rem;">Intensité</td>
+            <td style="padding:16px 24px;text-align:center;">⭐</td>
+            <td style="padding:16px 24px;text-align:center;">⭐⭐⭐</td>
+            <td style="padding:16px 24px;text-align:center;">⭐⭐⭐⭐⭐</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--card-border);">
+            <td style="padding:16px 24px;color:var(--grey);font-size:0.95rem;">Ambiance</td>
+            <td style="padding:16px 24px;text-align:center;color:var(--white);">Colorée & fun</td>
+            <td style="padding:16px 24px;text-align:center;color:var(--white);">Sombre & tendue</td>
+            <td style="padding:16px 24px;text-align:center;color:var(--white);">Militaire & réaliste</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--card-border);background:rgba(255,255,255,0.01);">
+            <td style="padding:16px 24px;color:var(--grey);font-size:0.95rem;">Idéal pour</td>
+            <td style="padding:16px 24px;text-align:center;color:var(--white);">Anniversaires</td>
+            <td style="padding:16px 24px;text-align:center;color:var(--white);">Groupes amis</td>
+            <td style="padding:16px 24px;text-align:center;color:var(--white);">Team building</td>
+          </tr>
+          <tr>
+            <td style="padding:16px 24px;color:var(--grey);font-size:0.95rem;">Expérience requise</td>
+            <td style="padding:16px 24px;text-align:center;color:#4ade80;">Aucune</td>
+            <td style="padding:16px 24px;text-align:center;color:var(--cyan);">Débutant OK</td>
+            <td style="padding:16px 24px;text-align:center;color:#f87171;">Recommandée</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container z1">
+    <span class="section-label reveal">Votre salle est choisie ?</span>
+    <h2 class="reveal reveal-delay-1">Réservez en <span class="gradient-text">2 minutes !</span></h2>
+    <p class="reveal reveal-delay-2">Disponible 7j/7, de 10h à 22h. Paiement sécurisé en ligne.</p>
+    <div class="cta-btns reveal reveal-delay-3">
+      <a href="reservation.html" class="btn btn-primary btn-lg">🎯 Réserver maintenant</a>
+      <a href="tarifs.html" class="btn btn-outline btn-lg">Voir les tarifs</a>
+    </div>
+  </div>
+</section>
+
+<footer role="contentinfo">
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">
+          <span class="logo-icon">🎯</span>
+          <span><span class="logo-v">VIRTUAL</span><span class="logo-rest">FINITY</span></span>
+        </a>
+        <p>Le centre de Laser Game en Réalité Virtuelle de référence en Suisse romande.</p>
+        <div class="footer-social">
+          <a href="https://instagram.com/virtualfinity" class="social-btn" aria-label="Instagram" target="_blank" rel="noopener">📷</a>
+          <a href="https://tiktok.com/@virtualfinity" class="social-btn" aria-label="TikTok" target="_blank" rel="noopener">🎵</a>
+          <a href="https://facebook.com/virtualfinity" class="social-btn" aria-label="Facebook" target="_blank" rel="noopener">👥</a>
+        </div>
+      </div>
+      <nav class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li><a href="concept.html">Notre concept</a></li>
+          <li><a href="salles.html">Nos salles</a></li>
+          <li><a href="tarifs.html">Tarifs</a></li>
+          
+        </ul>
+      </nav>
+      <div class="footer-col">
+        <h4>Réserver</h4>
+        <ul>
+          <li><a href="reservation.html">Réservation en ligne</a></li>
+          <li><a href="tarifs.html">Tarifs</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Adresse</h4>
+        <address>
+          Route de Boudry 16<br>
+          2016 Cortaillod, Suisse<br><br>
+          ✉️ <a href="mailto:info@virtualfinity.ch">info@virtualfinity.ch</a><br>
+          Lun–Ven : 14h–22h · Sam–Dim : 10h–22h
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025–2026 VIRTUALFINITY · Tous droits réservés.</p>
+      <p><a href="mentions-legales.html">Mentions légales</a> · <a href="mentions-legales.html#cgv">CGV</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="./js/main.js"></script>
+</body>
+</html>
